@@ -16,7 +16,7 @@
 
     <artifactId>backup</artifactId>
     <groupId>com.instaclustr.cassandra.backup</groupId>
-    <version>0.1</version>
+    <version>0.1.1</version>
 
     <dependencies>
         <dependency>

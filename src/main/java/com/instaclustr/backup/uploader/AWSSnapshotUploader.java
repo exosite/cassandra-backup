@@ -5,6 +5,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.*;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.Upload;
@@ -148,6 +149,10 @@ public class AWSSnapshotUploader extends SnapshotUploader {
             listMultipartUploadsRequest
                     .withKeyMarker(multipartUploadListing.getKeyMarker())
                     .withUploadIdMarker(multipartUploadListing.getUploadIdMarker());
+        }
+        try {
+            com.amazonaws.http.IdleConnectionReaper.shutdown();
+        } catch (Throwable t) {
         }
     }
 }
