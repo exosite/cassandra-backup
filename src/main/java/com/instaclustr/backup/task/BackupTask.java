@@ -205,7 +205,7 @@ public class BackupTask implements Callable<Void> {
                         try {
                             storageServiceMBean.clearSnapshot(arguments.snapshotTag);
                             logger.info("Cleared snapshot \"{}\".", arguments.snapshotTag);
-
+                            System.exit(0);
                         } catch (final IOException e) {
                             logger.error("Failed to cleanup snapshot {}.", arguments.snapshotTag, e);
                         }
