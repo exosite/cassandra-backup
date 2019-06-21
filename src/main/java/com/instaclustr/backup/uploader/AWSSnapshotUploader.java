@@ -149,5 +149,6 @@ public class AWSSnapshotUploader extends SnapshotUploader {
                     .withKeyMarker(multipartUploadListing.getKeyMarker())
                     .withUploadIdMarker(multipartUploadListing.getUploadIdMarker());
         }
+        s3Client.shutdown();
     }
 }
